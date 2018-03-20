@@ -1,0 +1,64 @@
+<div id="keyboard-container">
+  <div class="output-box">
+    <div class="output">
+      {{ inputValue }}<span *ngIf="!inputValue" class="placeholder">{{ placeholder }}</span>
+    </div>
+  </div>
+  <div id="keyboard">
+    <div (click)="onInput('1')" class="key">1</div>
+    <div (click)="onInput('2')" class="key">2</div>
+    <div (click)="onInput('3')" class="key">3</div>
+    <div (click)="onInput('4')" class="key">4</div>
+    <div (click)="onInput('5')" class="key">5</div>
+    <div (click)="onInput('6')" class="key">6</div>
+    <div (click)="onInput('7')" class="key">7</div>
+    <div (click)="onInput('8')" class="key">8</div>
+    <div (click)="onInput('9')" class="key">9</div>
+    <div (click)="onInput('0')" class="key">0</div>
+    <div (click)="onInput('A')" class="key">A</div>
+    <div (click)="onInput('Z')" class="key">Z</div>
+    <div (click)="onInput('E')" class="key">E</div>
+    <div (click)="onInput('R')" class="key">R</div>
+    <div (click)="onInput('T')" class="key">T</div>
+    <div (click)="onInput('Y')" class="key">Y</div>
+    <div (click)="onInput('U')" class="key">U</div>
+    <div (click)="onInput('I')" class="key">I</div>
+    <div (click)="onInput('O')" class="key">O</div>
+    <div (click)="onInput('P')" class="key">P</div>
+    <div (click)="onInput('Q')" class="key">q</div>
+    <div (click)="onInput('S')" class="key">S</div>
+    <div (click)="onInput('D')" class="key">D</div>
+    <div (click)="onInput('F')" class="key">F</div>
+    <div (click)="onInput('G')" class="key">G</div>
+    <div (click)="onInput('H')" class="key">H</div>
+    <div (click)="onInput('J')" class="key">J</div>
+    <div (click)="onInput('K')" class="key">K</div>
+    <div (click)="onInput('L')" class="key">L</div>
+    <div (click)="onInput('M')" class="key">M</div>
+    <div (click)="onCapsLock()" class="key shift">
+      <i [ngClass]="{'ic-green': isCapsLocked}" class="material-icons">&#xE318;</i>
+      Caps lock
+    </div>
+    <div (click)="onInput('W')" class="key">W</div>
+    <div (click)="onInput('x')" class="key">X</div>
+    <div (click)="onInput('C')" class="key">C</div>
+    <div (click)="onInput('V')" class="key">V</div>
+    <div (click)="onInput('B')" class="key">B</div>
+    <div (click)="onInput('N')" class="key">N</div>
+    <div (click)="onClear()" class="key back">
+      <i class="material-icons">&#xE317;</i>
+      delete
+    </div>
+    <div (click)="onHide()" class="key cancel">
+      <i class="material-icons">&#xE31A;</i>
+      Hide
+    </div>
+    <div style="cursor: initial;" class="key"></div>
+    <div (click)="onInput(' ')" class="key space"></div>
+    <div (click)="onInput('.')" class="key">.</div>
+    <div (click)="onEnter()" class="key  enter">
+      <i class="material-icons">&#xE31B;</i>
+      Enter
+    </div>
+  </div>
+</div>

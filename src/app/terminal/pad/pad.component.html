@@ -1,0 +1,72 @@
+<app-keyboard *ngIf="keyboard && alphaNumericPad" (valueEvent)="onKeyboardValue($event)" (hideEvent)="onHideKeyboardEvent($event)" [defaultValue]="inputValue" [limit]="limit" [placeholder]="placeholder"></app-keyboard>
+<div *ngIf="!keyboard" class="pad">
+  <div class="phone-string">
+    <div class="output">
+      {{ inputValue | format:type }}<span *ngIf="!inputValue" class="placeholder">{{ placeholder }}</span>
+    </div>
+  </div>
+  <div class="pad-btn-group">
+    <div (click)="onInput(1)" class="item dig">
+      <span class="n">1</span>
+      <span class="a"></span>
+    </div>
+    <div (click)="onInput(2)" class="item dig">
+      <span class="n">2</span>
+      <span class="a">ABC</span>
+    </div>
+    <div (click)="onInput(3)" class="item dig">
+      <span class="n">3</span>
+      <span class="a">DEF</span>
+    </div>
+    <div (click)="onClear()" class="item action">
+      <span class="">Clear</span>
+      <span class="a">
+        <i class="material-icons">&#xE5C4;</i>
+      </span>
+    </div>
+    <div (click)="onInput(4)" class="item dig">
+      <span class="n">4</span>
+      <span class="a">GHI</span>
+    </div>
+    <div (click)="onInput(5)"ctrl class="item dig">
+      <span class="n">5</span>
+      <span class="a">JKL</span>
+    </div>
+    <div (click)="onInput(6)" class="item dig">
+      <span class="n">6</span>
+      <span class="a">MNO</span>
+    </div>
+    <div (click)="onValidate()" class="item action">
+      <span class="">VALIDATE</span>
+      <span class="a">
+        <i class="material-icons" style="color:green;">&#xE876;</i>
+      </span>
+    </div>
+    <div (click)="onInput(7)" class="item dig">
+      <span class="n">7</span>
+      <span class="a">PQRS</span>
+    </div>
+    <div (click)="onInput(8)" class="item dig">
+      <span class="n">8</span>
+      <span class="a">TUV</span>
+    </div>
+    <div (click)="onInput(9)" class="item dig">
+      <span class="n">9</span>
+      <span class="a">WXYZ</span>
+    </div>
+    <div (click)="onCancel()" class="item action">
+      <span class="">Cancel</span>
+      <span class="a">
+        <i class="material-icons" style="color: red;">&#xE5C9;</i>
+      </span>
+    </div>
+    <div style="padding-top: 20px;" (click)="onHideKeyboardEvent(false)" class="item">
+      <i class="material-icons">&#xE312;</i>
+    </div>
+    <div (click)="onInput(0)" class="item dig">
+      <span class="n">0</span>
+      <span class="a">+</span>
+    </div>
+    <div style="cursor: initial;" class="item"></div>
+  </div>
+</div>

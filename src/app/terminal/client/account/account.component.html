@@ -1,0 +1,31 @@
+<div class="card summary-box">
+  <h4 class="h3-responsive text-center">Accounts Summary</h4>
+  <div class="divider"></div>
+  <div class="row" style="padding-left: 5px;">
+    <div class="col-12 col-sm-2" style="margin-bottom: 16px;">
+      <img class="img-fuild rounded-circle" alt="Profile Picture" [src]="cs.photoURL((authService.user | async)?.photoURL)" style="width: 65px;">
+    </div>
+    <div class="col-12 col-sm-10">
+      <p>{{ authService.displayName }}</p>
+      <p>{{ user?.address }}</p>
+      <button class="btn btn-sp waves-effect waves-light btn-sm" type="button" style="width: 95px;">Update</button>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table table-sp">
+      <tbody>
+        <tr *ngFor="let account of accounts" style="padding-top: 30px;">
+          <td style="vertical-align: top;" class="px-1">{{ currency?.name | uppercase }}</td>
+          <td style="vertical-align: top;" class="px-3 py-2">{{ account?.data.accountNumber }}</td>
+          <td class="px-1" style="text-align: right;vertical-align: top;">{{ getBalnce(account?.id, balances$)?.amount }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mx-auto" *ngIf="accounts.length == 0" style="width: 250px;text-align: center;">
+      <a class="btn btn-light btn-sp" routerLink="/terminal/client/add-account">
+        Open an account
+      </a>
+    </div>
+  </div>
+</div>
+<app-transactions-list [data]="transactionList"></app-transactions-list>

@@ -1,0 +1,11 @@
+#navbarClient {
+    transition: left .5s;
+    background-color: #FF5300;
+}
+
+@media (max-width: 800px) {
+    .navbar-nav>li {
+        display: flex;
+    }
+
+}

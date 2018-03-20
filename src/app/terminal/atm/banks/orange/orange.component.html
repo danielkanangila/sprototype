@@ -1,0 +1,13 @@
+<app-loader *ngIf="onProcess"></app-loader>
+<div class="withdrawal-box ">
+  <div class="choose-box m-auto orange-bank" style="width: 450px;text-align:center;padding-top:0px;">
+    <div class="card" style="background-color: #FF5300;color:#fff;padding: 1rem;border-radius: 0px;">
+      <h1 style="padding-left:5px;font-size:22px;">Orange Bonjour :)</h1>
+    </div>
+    <span *ngIf="!(trtSuccessful | async)" class="info">{{ message }}</span>
+    <app-pad *ngIf="!phoneNumber && !trtSuccessful" [limit]="10" (validaionEvent)="onValidatePhoneNumber($event)" [placeholder]="'Phone number...'" type="phone"></app-pad>
+    <app-pad *ngIf="phoneNumber && !amount && !trtSuccessful" [limit]="10" (validaionEvent)="onValidateAmount($event)" [placeholder]="'Amount...'" type="amount"></app-pad>
+    <app-pad *ngIf="phoneNumber && amount && !token && !trtSuccessful" [limit]="10" (validaionEvent)="onValidateToken($event)" [placeholder]="'Transaction token...'" [type]="'pin'" [alphaNumericPad]="true"></app-pad>
+    <app-alert *ngIf="trtSuccessful | async"></app-alert>
+  </div>
+</div>

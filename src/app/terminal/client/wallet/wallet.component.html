@@ -1,0 +1,32 @@
+<div class="wallet-wrapper">
+  <div class="menu-wrapper m-auto">
+    <div class="menu">
+      <div (click)="showTransList = !showTransList"  class="item">
+        <i class="material-icons">&#xE255;</i>
+        <span class="w-txt">Withdrawal</span>
+      </div>
+      <div (click)="onBalnceMessage()" class="item">
+        <i class="material-icons">&#xE84F;</i>
+        <span class="w-txt">Balance</span>
+      </div>
+      <div (click)="showMessage = !showMessage" class="item">
+        <i class="material-icons">&#xE554;</i>
+        <span class="w-txt">Token</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-box">
+
+    <app-on-pending-transactions
+      *ngIf="showTransList"
+      (TransactionValidationEvent)="onValidateTransaction($event)"
+      (cancelEvent)="onCancelTransaction($event)"
+      [accountList]="accounts"
+      [pendingTransactionList]="transList">
+    </app-on-pending-transactions>
+    <app-token
+      (deleteEvent)="onDeleteMessage($event)"
+      [messageList]="messageList"
+      *ngIf="showMessage"></app-token>
+  </div>
+</div>

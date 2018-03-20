@@ -1,0 +1,8 @@
+<div id="main">
+    <div *ngIf="clientService.IsSidebarToggle" class="pushable-wrapper" (click)="clientService.toggleMenu()"></div>
+    <app-toolbar *ngIf="(authService.user | async)"></app-toolbar>
+    <div class="container">
+        <router-outlet></router-outlet>
+        <app-home *ngIf="clientService.getHomeScreenState"></app-home>
+    </div>
+</div>

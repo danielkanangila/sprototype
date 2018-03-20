@@ -1,0 +1,26 @@
+.nav {
+  width: 100px;
+  position: fixed;
+}
+
+.nav .nb {
+  position: fixed;
+  top: 250px;
+}
+
+.nav .nb.nav-withdraw {
+  left: 0;
+}
+
+.nav .nb.nav-deposit {
+  right: 0;
+}
+
+.nav .nb.nav-cancel {
+  left: 0;
+  top: 340px;
+}
+
+.nav-item {
+  width: 250px;
+}

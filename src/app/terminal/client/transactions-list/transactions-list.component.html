@@ -1,0 +1,44 @@
+<div class="card" *ngFor="let t of transactionList">
+  <h1 class="card-title">
+    <i class="material-icons">&#xE8D5;</i>
+    &nbsp;&nbsp;
+    Transaction
+  </h1>
+  <div class="divider"></div>
+  <div class="card-body">
+    <div style="font-size:0.9rem;" class="description">
+      <table>
+        <tr>
+          <td>Date</td>
+          <td class="px-2">:</td>
+          <td>{{ cs.formatDate(t?.data.createdAt) }}</td>
+        </tr>
+        <tr>
+          <td>Account</td>
+          <td class="px-2">:</td>
+          <td>{{ t?.aNumber }}</td>
+        </tr>
+        <tr>
+          <td>Card</td>
+          <td class="px-2">:</td>
+          <td>{{ t?.cNumber }}</td>
+        </tr>
+        <tr>
+          <td>Operation</td>
+          <td class="px-2">:</td>
+          <td>{{ cs.findOperation(t?.data.amount) }}</td>
+        </tr>
+        <tr>
+          <td>Memo</td>
+          <td class="px-2">:</td>
+          <td>{{ t?.data.description }}</td>
+        </tr>
+        <tr>
+          <td>Amount</td>
+          <td class="px-2">:</td>
+          <td class="font-weight-bold" style="font-size: 17px;">{{ formatAmount(t?.data.amount) }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

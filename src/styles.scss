@@ -1,0 +1,261 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/dist/css/bootstrap.css";
+body {
+  font-family: 'Open Sans', sans-serif;
+  transition: background-color .5s;
+  background: #E2E4E6;
+  padding-top: 48px;
+  padding-bottom: 48px
+}
+
+.table-sp tr:hover {
+  background: #ddd;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1040;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.pushable-wrapper {
+  position: absolute;
+  z-index: 1038;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: left .5s;
+}
+
+.sidenav a {
+  padding: 10px 10px 10px 32px;
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+  display: block;
+  transition: 0.6s;
+  text-transform: uppercase;
+}
+
+.sidenav a:hover {
+  background-color: #FF5300;
+  color: #f1f1f1;
+  transition: 0.6s;
+}
+
+.sidenav .menu-item {
+  font-size: 0.68em;
+  line-height: 1;
+}
+
+.sidenav .menu-item:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .menu-item .material-icons {
+  font-size: 18px;
+  vertical-align: text-bottom;
+}
+
+.sidenav .profile-box {
+  display: block;
+  width: 100%;
+  background-image: url("assets/images/topography.svg"),
+      linear-gradient(0deg, #181818, #181818);
+  background-position: fixed;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 8px 0px 16px 0px;
+}
+
+.profile-username {
+  display:  block;
+  margin-top: 1rem;
+}
+
+.sidenav .profile-box .material-icons {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 96px;
+  text-align: center;
+  color: #afafaf;
+}
+
+.card {
+  margin-top: 12px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card.summary-box {
+  padding: 1rem;;
+}
+
+.card.summary-box .divider {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.divider-cb-h {
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.wa {
+  width: 250px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.card .card-title {
+  padding: 13px;
+  font-size: 16px;
+  color: rgb(61, 61, 61);
+}
+
+.card .card-title .material-icons {
+  font-size: 17px;
+  vertical-align: text-bottom;
+}
+
+.divider {
+  margin-top: 0rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-sp {
+  background-color: #FF5300;
+  border: 1px solid #FF5300;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.btn-sp:hover {
+  background-color: rgb(223, 79, 7);
+  border: 1px solid #FF5300;
+  color: #fff;
+  transition: 0.5s;
+}
+
+#main {
+  transition: margin-left .5s;
+  //padding-top: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+
+.form-container {
+  background: white;
+  padding: 3.5em;
+  padding-top: 4em;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -250px;
+}
+
+button {
+  padding: 1.2em;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.basic-btn {
+  background: #FF5300;
+  color: white;
+}
+
+
+h2 {
+  margin: 1.7em 0 .9em 0;
+}
+
+.alc {
+  text-align: center;
+  display: block;
+  margin: 15px 0;
+}
+
+.error {
+  background: #f1f0ef;
+  padding: 1em;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+#goback {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: .8em;
+  color: #3B8598;
+}
+
+#goback span {
+  font-size: 1em;
+}
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ccc;
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background: #E2E4E6;
+  top: 10px;
+  left: -5px;
+  animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1.2em;
+    width: 90%;
+    margin-left: -45%;
+  }
+  button {
+    font-size: 1em;
+  }
+}
+
+
